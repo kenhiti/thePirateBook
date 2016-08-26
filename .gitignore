@@ -1,1 +1,7 @@
-/target/*
+.classpath
+.mvn/*
+.project
+.settings/*
+target/*
+ago.log
+
