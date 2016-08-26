@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<title>ThePirateBook</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+
+		<script type="text/javascript" src="lib/js/angular.js"></script>
+		<script type="text/javascript" src="lib/js/angular-route.js"></script>
+		<script type="text/javascript" src="lib/js/angular-resource.js"></script>
+		<script type="text/javascript" src="lib/js/angular-messages.js"></script>
+		<script type="text/javascript" src="lib/js/angular-locale_pt-br.js"></script>
+
+		<script type="text/javascript" src="angularjs/app/app.js"></script>	
+		<script type="text/javascript" src="angularjs/config/configValue.js"></script>	
+		<script type="text/javascript" src="angularjs/config/routeProvider.js"></script>
+
+		<script type="text/javascript" src="angularjs/controllers/loginCtrl.js"></script>
+		<script type="text/javascript" src="angularjs/controllers/homeCtrl.js"></script>
+		<script type="text/javascript" src="angularjs/controllers/autorCtrl.js"></script>
+
+		<script type="text/javascript" src="angularjs/services/autorService.js"></script>
+
+		<style type="text/css">
+			.jumbotron {
+				width: 400px;
+				text-align: center;
+				margin-top: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 30px;
+			}
+			.table {
+				margin-top: 20px;
+			}
+			.form-control {
+				margin-bottom: 5px;
+			}
+			.emptyBox10 {
+				width: 100%;
+				height: 10px;
+			}
+			.emptyBox20 {
+				width: 100%;
+				height: 20px;
+			}
+			.emptyBox30 {
+				width: 100%;
+				height: 30px;
+			}
+		</style>
+
+	</head>
+	<body>
+		
+		<div ng-view style="height: 780px;"></div>
+		
+	</body>
+</html>
