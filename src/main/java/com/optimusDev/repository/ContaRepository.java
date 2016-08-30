@@ -6,4 +6,6 @@ import com.optimusDev.domain.Conta;
 
 public interface ContaRepository extends JpaRepository<Conta, Long> {
 
+	Conta findByEmailEquals(String apiKey);
+
 }
