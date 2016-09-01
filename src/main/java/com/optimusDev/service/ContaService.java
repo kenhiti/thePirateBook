@@ -34,4 +34,8 @@ public class ContaService {
 		repository.delete(id);
 	}
 
+	public Conta buscarPorEmail(String email) {
+		return repository.findByEmailEquals(email);
+	}
+
 }

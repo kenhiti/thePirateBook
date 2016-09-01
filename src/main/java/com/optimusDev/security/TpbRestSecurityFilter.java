@@ -82,12 +82,9 @@ public class TpbRestSecurityFilter extends GenericFilterBean {
         	contentType = "application/json";
         	contentMd5 = md5.encodePassword("{}", null);
         }
-            
-        
         
         String timestamp = request.getHeader("x-date");
-        String context = request.getHeader("x-context");
-        
+                
         // calculate content to sign
         StringBuilder toSign = new StringBuilder();
         toSign.append(request.getMethod()).append("\n")
@@ -116,7 +113,7 @@ public class TpbRestSecurityFilter extends GenericFilterBean {
         // Create an authentication token
         /*Usuario usuario = repository.findByEmailEquals(auth[0]);*/
         
-        Authentication authentication = new TpbRestToken(auth[0], restCredential, date, context);
+        Authentication authentication = new TpbRestToken(auth[0], restCredential, date);
 
         try {
             // Request the authentication manager to authenticate the token (throws exception)

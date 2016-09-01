@@ -65,7 +65,7 @@ public class TpbRestAuthenticationProvider implements AuthenticationProvider {
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		authorities.add(new SimpleGrantedAuthority("ADMINISTRADOR"));
 		
-		restToken = new TpbRestToken(conta, credentials, restToken.getTimestamp(),restToken.getContext(), authorities);
+		restToken = new TpbRestToken(conta, credentials, restToken.getTimestamp(), authorities);
 
 		return restToken;
 	}

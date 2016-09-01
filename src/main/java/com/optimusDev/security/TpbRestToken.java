@@ -12,19 +12,16 @@ public class TpbRestToken extends UsernamePasswordAuthenticationToken {
 	
 	private static final long serialVersionUID = 1L;	
 	
-	private Date timestamp;
-	private String context;
+	private Date timestamp;	
 	
-	public TpbRestToken(Object principal, TpbRestCredentials credentials, Date timestamp, String context) {
+	public TpbRestToken(Object principal, TpbRestCredentials credentials, Date timestamp) {
 		super(principal, credentials);
-		this.timestamp = timestamp;
-		this.context = context;
+		this.timestamp = timestamp;		
 	}
 	
-	public TpbRestToken(Object principal, TpbRestCredentials credentials, Date timestamp, String context,Collection<? extends GrantedAuthority> authorities) {
+	public TpbRestToken(Object principal, TpbRestCredentials credentials, Date timestamp,Collection<? extends GrantedAuthority> authorities) {
 		super(principal, credentials, authorities);
-		this.timestamp = timestamp;
-		this.context = context;
+		this.timestamp = timestamp;		
 	}
 
 	@Override
@@ -42,9 +39,5 @@ public class TpbRestToken extends UsernamePasswordAuthenticationToken {
     
     public Date getTimestamp() {
         return timestamp;
-    }
-    
-    public String getContext(){
-    	return context;
     }
 }

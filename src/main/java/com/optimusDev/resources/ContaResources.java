@@ -37,6 +37,12 @@ public class ContaResources {
 	}
 	
 	@CrossOrigin
+	@RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
+	public ResponseEntity<Conta> buscarEmail(@PathVariable("email") String email){		
+		return ResponseEntity.status(HttpStatus.OK).body(service.buscarPorEmail(email));
+	}
+	
+	@CrossOrigin
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> salvar(@RequestBody Conta conta){
 		conta = service.salvar(conta);
