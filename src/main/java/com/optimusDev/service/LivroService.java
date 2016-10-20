@@ -3,8 +3,11 @@ package com.optimusDev.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import com.optimusDev.domain.Conta;
 import com.optimusDev.domain.Livro;
 import com.optimusDev.repository.LivroRepository;
 
@@ -19,10 +22,15 @@ public class LivroService {
 	}
 	
 	public Livro buscar(Long id){
-		return repository.findOne(id);
+		Livro livro = repository.findOne(id);
+		return livro;
 	}
 	
 	public Livro salvar(Livro livro){
+		Authentication auth =  SecurityContextHolder.getContext().getAuthentication();
+		Conta conta = (Conta)auth.getPrincipal();
+		System.out.println("Usuario Logado : " +conta);
+		livro.setConta(conta);
 		return repository.save(livro);
 	}
 	

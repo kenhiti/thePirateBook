@@ -64,7 +64,7 @@ public class TpbRestSecurityFilter extends GenericFilterBean {
         }
 
         // Authorization header is in the form <public_access_key>:<signature>
-        String auth[] = credentials.split(":");
+	        String auth[] = credentials.split(":");
         
         // get md5 content and content-type if the request is POST or PUT method
         boolean hasContent = METHOD_HAS_CONTENT.contains(request.getMethod());

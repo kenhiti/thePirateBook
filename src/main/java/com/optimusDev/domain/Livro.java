@@ -29,8 +29,8 @@ public class Livro implements Serializable {
 	private Long idLivro;
 	private String titulo;
 	private String edicao;
-	private byte[] capa;
-	private byte[] pdf;
+	private Arquivo capa;
+	private Arquivo pdf;
 	private String observacao;
 	private Editora editora;
 	private Genero genero;
@@ -115,11 +115,12 @@ public class Livro implements Serializable {
 	}
 	
 	@NotNull
-	@Column(name="capa")
-	public byte[] getCapa() {
+	@OneToOne
+	@JoinColumn(name="capa")
+	public Arquivo getCapa() {
 		return capa;
 	}
-	public void setCapa(byte[] capa) {
+	public void setCapa(Arquivo capa) {
 		this.capa = capa;
 	}	
 	
@@ -132,11 +133,12 @@ public class Livro implements Serializable {
 	}
 	
 	@NotNull
-	@Column(name="pdf")
-	public byte[] getPdf() {
+	@OneToOne
+	@JoinColumn(name="pdf")
+	public Arquivo getPdf() {
 		return pdf;
 	}
-	public void setPdf(byte[] pdf) {
+	public void setPdf(Arquivo pdf) {
 		this.pdf = pdf;
 	}
 	
